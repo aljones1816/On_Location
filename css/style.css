@@ -1,0 +1,19 @@
+#menu {
+    background:PaleTurquoise;
+    width: 100%;
+  }
+
+  #mainbody {
+    background:LightSalmon;
+  }
+
+  .container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 65% 35%;
+  }
+  
+  #map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+   }

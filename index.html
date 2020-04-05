@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>The On Location Project</h1>
+    <!--The div element for the map -->
+    <div class="container">
+    <div id="map"></div>
+    <div id="menu">
+        <h2>Shows</h2>
+        <ul>
+            <li><a id="Scranton" href="#">The Office</a></li>
+        </ul>
+    </div>
+</div>
+    <script>
+    var scrantonCoords = {
+        lat: 41.4090, 
+        lng: -75.6624
+    };
+
+// Initialize and add the map
+function initMap() {
+  // The location of the center of the US
+  var centerUS = {lat: 39.8283, lng: -98.5795};
+  // The map, centered  on US
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 3, center: centerUS});
+ 
+   google.maps.even.addListener(document.getElementByID("Scranton"))   
+
+      document.getElementByID("Scranton").addListener('click', function() {
+
+    
+    map.setZoom(8);
+    map.setCenter(new google.maps.LatLng(scrantonCoords));
+});
+
+}
+
+
+
+
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvxnlbhI6rRIDFSLbqWUWi9WDNBmJFN4c&callback=initMap">
+    </script>
+  </body>
+</html>
