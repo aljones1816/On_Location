@@ -12,6 +12,7 @@
         <h2>Shows</h2>
         <ul>
             <li><a id="Scranton" href="#">The Office</a></li>
+
         </ul>
     </div>
 </div>
@@ -22,25 +23,25 @@
     };
 
 // Initialize and add the map
+var map;
 function initMap() {
   // The location of the center of the US
   var centerUS = {lat: 39.8283, lng: -98.5795};
   // The map, centered  on US
-  var map = new google.maps.Map(
+  map = new google.maps.Map(
       document.getElementById('map'), {zoom: 3, center: centerUS});
- 
-   google.maps.even.addListener(document.getElementByID("Scranton"))   
 
-      document.getElementByID("Scranton").addListener('click', function() {
+};
 
-    
-    map.setZoom(8);
-    map.setCenter(new google.maps.LatLng(scrantonCoords));
-});
-
+document.getElementById('Scranton').onclick = function() {
+map.setCenter(new google.maps.LatLng(41.4090,-75.6624));
+map.setZoom(15);
+var marker = new google.maps.Marker({
+    position: {lat: 41.4090, lng: -75.6624},
+    map: map,
+    title: 'Hello World!'
+  });
 }
-
-
 
 
     </script>
